@@ -1,2 +1,2 @@
 haxelib install flixel
-haxelib run lime setup
+haxelib run lime setup --always
