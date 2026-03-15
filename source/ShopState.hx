@@ -56,7 +56,7 @@ class ShopState extends FlxState
 
 		table.setPosition(shopKeeper.x, shopKeeper.y);
 
-		itemText.setPosition(table.x, table.y);
+		itemText.setPosition(table.getGraphicMidpoint().x * 0.825, table.getGraphicMidpoint().y * 1.225);
 
 		pointsText.text = 'Points: ${Global.POINTS.value}';
 
