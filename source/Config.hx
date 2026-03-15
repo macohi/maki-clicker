@@ -25,7 +25,7 @@ class Config
         {
             if (!line.startsWith('$field:')) continue;
 
-            return line.substr('$field:'.length);
+            return line.substr('$field:'.length).trim();
         }
 
         return null;
