@@ -45,10 +45,17 @@ class PlayState extends FlxState
 		score = Global.SCORE.value;
 		points = Global.POINTS.value;
 
-		new FlxTimer().start(10, function(t)
+		new FlxTimer().start(FlxG.random.float(2, 5), function(t)
 		{
-			if (FlxG.random.bool(FlxG.random.float(0, 25)))
+			// trace(t.elapsedLoops);
+			if (t.elapsedLoops == 1)
+			{
+				t.time -= FlxG.random.float(-1, 3);
+			}
+			else if (FlxG.random.bool(FlxG.random.float(0, 25)))
+			{
 				t.time += FlxG.random.float(-0.1, 10);
+			}
 			else
 			{
 				var newPoive:Poive = new Poive();
