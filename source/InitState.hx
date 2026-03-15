@@ -9,6 +9,8 @@ class InitState extends FlxState
 
 		trace('Maki Clicker ${Global.VERSION.makeString()}');
 
+		Global.changeSAVESLOT('game1');
+
 		FlxG.switchState(() -> new PlayState());
 	}
 }
