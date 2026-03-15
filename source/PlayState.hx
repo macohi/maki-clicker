@@ -62,7 +62,7 @@ class PlayState extends FlxState
 					newPoive.destroy();
 				});
 
-				FlxTween.tween(newPoive, {alpha: 0}, 0.25, {
+				FlxTween.tween(newPoive, {alpha: 0}, 2, {
 					ease: FlxEase.sineInOut,
 					startDelay: 1,
 					onComplete: function(t)
