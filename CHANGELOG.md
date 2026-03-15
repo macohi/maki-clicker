@@ -1,2 +1,7 @@
+- Magon has been scaled down
 - Now using a bitmap font instead of Born2bSportyFS
-    - Text fonts are *SLIGHTLY* (as of right now) customizable via config files
+    - Text fonts are now customizable via config files via these fields:
+        - `width` : The width of the individual letter frames
+        - `height` : The height of the individual letter frames
+        - `default_size` : The default size if a size is not specified, if unspecified the `width` field is used
+        - `letters` : The letters in the font atlas
