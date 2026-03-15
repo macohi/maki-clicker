@@ -15,6 +15,8 @@ class PlayState extends FlxState
 		{
 			increment(1);
 		});
+
+        add(new VersionText());
 	}
 
 	public function increment(amount:Int)
