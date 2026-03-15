@@ -17,14 +17,15 @@ class PlayState extends FlxState
 		magon.onLeftPressed.add(function()
 		{
 			increment(1);
-			magon.scale.set(0.9, 0.9);
+			magon.scale.set(0.8, 0.8);
 		});
 		magon.onLeftReleased.add(function()
 		{
-			magon.scale.set(1, 1);
+			magon.scale.set(0.9, 0.9);
 		});
+		magon.scale.set(0.9, 0.9);
 
-        add(scoreText);
+		add(scoreText);
 		add(new VersionText());
 
 		score = Global.SCORE.value;
@@ -41,7 +42,7 @@ class PlayState extends FlxState
 		super.update(elapsed);
 
 		scoreText.text = 'Score: $score';
-        scoreText.y = FlxG.height - (scoreText.height * 1.5);
+		scoreText.y = FlxG.height - (scoreText.height * 1.5);
 		scoreText.screenCenter(X);
 	}
 }
