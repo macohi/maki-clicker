@@ -16,12 +16,16 @@ class TheObject extends FlxSprite
 		super.update(elapsed);
 
 		if (FlxG.mouse.overlaps(this))
+		{
+			if (FlxG.mouse.justPressed)
+				onLeftPressed.dispatch();
+
+            
 			if (FlxG.mouse.justReleased)
-				onLeftClick.dispatch();
-			else if (FlxG.mouse.justReleasedRight)
-				onLeftClick.dispatch();
+				onLeftReleased.dispatch();
+		}
 	}
 
-	public var onLeftClick:FlxSignal = new FlxSignal();
-	public var onRightClick:FlxSignal = new FlxSignal();
+	public var onLeftPressed:FlxSignal = new FlxSignal();
+	public var onLeftReleased:FlxSignal = new FlxSignal();
 }
