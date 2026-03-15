@@ -1,1 +1,2 @@
 - Now using a bitmap font instead of Born2bSportyFS
+    - Text fonts are *SLIGHTLY* customizable via config files

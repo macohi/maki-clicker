@@ -24,10 +24,7 @@ class PlayState extends FlxState
 			magon.scale.set(1, 1);
 		});
 
-		scoreText.fieldWidth = FlxG.width;
-		scoreText.alignment = CENTER;
         add(scoreText);
-
 		add(new VersionText());
 
 		score = Global.SCORE.value;
@@ -45,5 +42,6 @@ class PlayState extends FlxState
 
 		scoreText.text = 'Score: $score';
         scoreText.y = FlxG.height - (scoreText.height * 1.5);
+		scoreText.screenCenter(X);
 	}
 }
