@@ -16,6 +16,16 @@ class InitState extends FlxState
 		lime.app.Application.current.window.element.style.setProperty("image-rendering", "pixelated");
 		#end
 
+		switchState();
+	}
+
+	public function switchState()
+	{
+		#if SHOP
+		FlxG.switchState(() -> new ShopState());
+		return;
+		#end
+
 		FlxG.switchState(() -> new PlayState());
 	}
 }

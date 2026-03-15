@@ -1,3 +1,4 @@
+- Added Shop: Area to spend your Points
 - The game is now 1280x720!
 - Added Poive
     Animated Clickable that spawns randomly
@@ -8,7 +9,7 @@
     - Purple (25% chance): 100 points
     - Pink (2% chance): 400 points
 
-- Added points: Store currency
+- Added points: Shop currency
 - Magon has been scaled down
 - Now using a bitmap font instead of Born2bSportyFS
     - Text fonts are now customizable via config files via these fields:

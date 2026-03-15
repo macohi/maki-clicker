@@ -147,5 +147,11 @@ class PlayState extends FlxState
 
 		Global.SCORE.value = score;
 		Global.POINTS.value = points;
+
+		if (pointQueue == 0)
+		{
+			if (FlxG.keys.justReleased.ESCAPE)
+				FlxG.switchState(() -> new ShopState());
+		}
 	}
 }
