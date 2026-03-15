@@ -29,6 +29,8 @@ class PlayState extends FlxState
         add(scoreText);
 
 		add(new VersionText());
+
+		score = Global.SCORE.value;
 	}
 
 	public function increment(amount:Int)
