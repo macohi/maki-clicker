@@ -17,7 +17,7 @@ class PlayState extends FlxState
 		mainClickable.onLeftPressed.add(function()
 		{
 			increment(1);
-			mainClickable.scale.set(0.8, 0.8);
+			mainClickable.scale.set(0.9, 0.9);
 		});
 		mainClickable.onLeftReleased.add(function()
 		{
@@ -34,6 +34,7 @@ class PlayState extends FlxState
 	public function increment(amount:Int)
 	{
 		score += amount;
+		Global.SCORE.value = score;
 	}
 
 	override function update(elapsed:Float)
