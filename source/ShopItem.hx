@@ -16,6 +16,8 @@ class ShopItem extends FlxSprite
 
     public function changeItem(item:String, ?levelNumber:Int = 1, ?useAmount:Int = 0)
     {
+		if (item == null) return;
+
         loadGraphic('assets/shop/si-$item.png');
 		screenCenter();
 		
