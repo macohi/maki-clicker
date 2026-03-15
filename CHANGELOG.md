@@ -1,2 +1,0 @@
-- Added DCE
-- Fixed score not being set to the saved score on start and thus scores getting reset
