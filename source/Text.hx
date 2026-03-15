@@ -10,6 +10,6 @@ class Text extends FlxText
 		font = 'assets/born2bsportyfs.otf';
 		#end
 
-		antialiasing = false;
+		antialiasing = true;
 	}
 }
