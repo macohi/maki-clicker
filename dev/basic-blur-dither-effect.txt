@@ -1,0 +1,13 @@
+Paint.net
+
+> Select the object
+
+> Sketch Blur
+    > Radius: 100
+    > Percentile: 67...
+    > Smoothness: 20
+
+> Quantize
+    > Colors: 8
+    > Dithering Level: 7
+    > Transparency threshold: 128
