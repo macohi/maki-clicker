@@ -1,0 +1,42 @@
+name: Build HTML5
+
+on:
+    push:
+        branches:
+            - main
+        tags:
+            - '*'
+    workflow_dispatch:
+
+jobs:
+    build-html5:
+        runs-on: ubuntu-latest
+        permissions:
+            contents: write
+        steps:
+            - uses: actions/checkout@v4
+
+            - name: Setup Haxe
+              uses: krdlab/setup-haxe@v2
+              with:
+                  haxe-version: latest
+
+            - name: Install haxelibs
+              run: |
+                  dir
+                  haxelib install lime
+                  haxelib install openfl
+                  haxelib install flixel
+                  haxelib install flixel-addons
+                  haxelib install flixel-ui
+                  haxelib run lime setup
+
+            - name: Build HTML5
+              run: haxelib run lime build html5
+
+            - name: Deploy to GitHub Pages
+              uses: peaceiris/actions-gh-pages@v4
+              with:
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  publish_dir: ./export/html5/bin
+                  publish_branch: gh-pages  # default: gh-pages
