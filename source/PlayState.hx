@@ -1,3 +1,5 @@
+import flixel.tweens.FlxEase;
+import flixel.tweens.FlxTween;
 import flixel.util.FlxTimer;
 import flixel.group.FlxSpriteGroup.FlxTypedSpriteGroup;
 import flixel.FlxG;
@@ -33,14 +35,16 @@ class PlayState extends FlxState
 			magon.scale.set(0.9, 0.9);
 		});
 		magon.scale.set(0.9, 0.9);
+		magon.updateHitbox();
 
 		add(numbersText);
 		add(new VersionText());
 
 		score = Global.SCORE.value;
+		points = Global.POINTS.value;
 
-		new FlxTimer().start(10, function(t) {
-
+		new FlxTimer().start(10, function(t)
+		{
 			if (FlxG.random.bool(FlxG.random.float(0, 25)))
 				t.time += FlxG.random.float(-0.1, 10);
 			else
@@ -48,6 +52,25 @@ class PlayState extends FlxState
 				var newPoive:Poive = new Poive();
 				newPoive.randomPosition(magon);
 				poives.add(newPoive);
+
+				newPoive.onLeftReleased.add(function()
+				{
+					incrementPoints(newPoive.config.reward);
+
+					FlxTween.cancelTweensOf(newPoive);
+					poives.remove(newPoive);
+					newPoive.destroy();
+				});
+
+				FlxTween.tween(newPoive, {alpha: 0}, 0.25, {
+					ease: FlxEase.sineInOut,
+					startDelay: 1,
+					onComplete: function(t)
+					{
+						poives.remove(newPoive);
+						newPoive.destroy();
+					}
+				});
 			}
 		}, 0);
 	}

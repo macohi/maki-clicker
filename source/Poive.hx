@@ -31,7 +31,7 @@ class Poive extends AnimatedClickable
 
 		this.color = this.config.color;
 
-		this.scale.set(0.25, 0.25);
+		this.scale.set(1 / 10, 1 / 10);
 		updateHitbox();
 	}
 
