@@ -1,8 +1,0 @@
-- Fixed Score not being saved
-- Toned down Main Clickable (magon) scale down on clicks
-- Texts now have antialiasing
-- [WEB] Texts now use the default flixel font on web, temp fix.
-- [WEB] The game has pixelated rendering on web now
-- Preparations for future clickables have been made:
-    - `assets/object.png` moved to `assets/clickable/magon.png`
-    - Clickable Objects now have a file location of `assets/clickables/`
