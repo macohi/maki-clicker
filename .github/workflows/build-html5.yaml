@@ -19,7 +19,7 @@ jobs:
             - name: Install haxelibs
               run: |
                   chmod +x setup.bat
-                  .\setup.bat
+                  ./setup.bat
 
             - name: Build HTML5
               run: haxelib run lime build html5
