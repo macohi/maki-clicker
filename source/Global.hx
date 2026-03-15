@@ -6,6 +6,7 @@ class Global
 	public static final VERSION:Version = new Version();
 
 	public static var SCORE:SaveField<Int>;
+	public static var POINTS:SaveField<Int>;
 
 	public static var SAVE_SLOT:String = 'game1';
 
@@ -17,6 +18,7 @@ class Global
 			Application.current.onExit.add(function(i)
 			{
 				SCORE.value = SCORE.value;
+				POINTS.value = POINTS.value;
 
 				FlxG.save.flush();
 			});
@@ -34,6 +36,7 @@ class Global
 		trace('Save slot $nss');
 
 		SCORE = new SaveField<Int>('score', 0, 'Score');
+		POINTS = new SaveField<Int>('points', 0, 'Points');
 
 		trace(FlxG.save.data);
 	}

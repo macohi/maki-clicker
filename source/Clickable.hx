@@ -6,7 +6,10 @@ class Clickable extends FlxSprite
 {
 	override public function new(object:String)
 	{
-		super(0, 0, 'assets/clickables/$object.png');
+		if (object != null)
+			super(0, 0, 'assets/clickables/$object.png');
+		else
+			super(0, 0);
 
 		screenCenter();
 	}
@@ -20,7 +23,6 @@ class Clickable extends FlxSprite
 			if (FlxG.mouse.justPressed)
 				onLeftPressed.dispatch();
 
-            
 			if (FlxG.mouse.justReleased)
 				onLeftReleased.dispatch();
 		}

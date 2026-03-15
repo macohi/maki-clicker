@@ -1,3 +1,9 @@
+- Added Poive : Animated Clickable that spawns randomly and will reward you a random amount of points depending on the color
+    - Green (Every other time) : 25 points
+    - Yellow (30% chance): 40 points
+    - Purple (25% chance): 100 points
+    - Pink (2% chance): 400 points
+- Added points: Store currency
 - Magon has been scaled down
 - Now using a bitmap font instead of Born2bSportyFS
     - Text fonts are now customizable via config files via these fields:
