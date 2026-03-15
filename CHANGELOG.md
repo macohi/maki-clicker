@@ -1,3 +1,5 @@
+- [WEB] Texts now use the default flixel font on web, temp fix.
+- [WEB] The game has pixelated rendering on web now
 - Preparations for future clickables have been made:
     - `assets/object.png` moved to `assets/clickable/main.png`
     - Clickable Objects now have a file location of `assets/clickables/`

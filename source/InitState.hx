@@ -11,6 +11,11 @@ class InitState extends FlxState
 
 		Global.changeSAVESLOT('game1');
 
+		#if web
+		// pixel perfect render fix!
+		lime.app.Application.current.window.element.style.setProperty("image-rendering", "pixelated");
+		#end
+
 		FlxG.switchState(() -> new PlayState());
 	}
 }

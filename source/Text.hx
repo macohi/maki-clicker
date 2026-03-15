@@ -6,6 +6,8 @@ class Text extends FlxText
 	{
 		super(x, y, 0, t, (s ?? 16));
 
+		#if !web
 		font = 'assets/born2bsportyfs.otf';
+		#end
 	}
 }
