@@ -6,7 +6,7 @@ class PlayState extends FlxState
 	public var magon:Clickable = new Clickable('magon');
 
 	public var score:Int = 0;
-	public var scoreText:Text = new Text('', 0, 0, 24);
+	public var scoreText:Text = new Text('');
 
 	override function create()
 	{

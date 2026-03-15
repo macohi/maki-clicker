@@ -24,8 +24,8 @@ class Text extends FlxBitmapText
 
 		active = false;
 
-		BASE_SIZE = config.getInt('default_size') ?? Std.int(font_size_point.x);
-		this.size = s ?? BASE_SIZE;
+		BASE_SIZE = Std.int(font_size_point.x);
+		this.size = s ?? (config.getInt('default_size') ?? BASE_SIZE);
 		text = t;
 	}
 
