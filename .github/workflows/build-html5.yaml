@@ -1,11 +1,6 @@
 name: Build HTML5
 
 on:
-    push:
-        branches:
-            - main
-        tags:
-            - '*'
     workflow_dispatch:
 
 jobs:
@@ -23,13 +18,7 @@ jobs:
 
             - name: Install haxelibs
               run: |
-                  dir
-                  haxelib install lime
-                  haxelib install openfl
-                  haxelib install flixel
-                  haxelib install flixel-addons
-                  haxelib install flixel-ui
-                  haxelib run lime setup
+                  .\setup.bat
 
             - name: Build HTML5
               run: haxelib run lime build html5
