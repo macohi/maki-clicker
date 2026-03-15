@@ -17,18 +17,22 @@ class Config
 
 	function get_fileLines():Array<String>
 	{
-		return Assets.getText(path).split('\n');
+		var fl = [];
+
+		for (thing in Assets.getText(path).split('\n'))
+		{
+			if (thing.trim().length > 0)
+				fl.push(thing.trim());
+		}
+
+		return fl;
 	}
 
 	public function getData(field:String):String
 	{
 		for (line in fileLines)
-		{
-			if (!line.startsWith('$field:'))
-				continue;
-
-			return line.substr('$field:'.length).trim();
-		}
+			if (line.startsWith('$field:'))
+				return line.substr('$field:'.length).trim();
 
 		return null;
 	}
