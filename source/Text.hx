@@ -10,11 +10,13 @@ class Text extends FlxBitmapText
 	public var BASE_SIZE:Int = 8;
 	public var size(default, set):Int = 8;
 
+	public var config:Config;
+
 	override public function new(t:String, ?x:Float, ?y:Float, ?s:Null<Int>, ?f:String)
 	{
-		var font_size:Config = new Config('fonts/${f ?? 'normal'}');
-		var font_size_point = FlxPoint.get(Std.parseInt(font_size.getData('width')), Std.parseInt(font_size.getData('height')));
+		this.config = new Config('fonts/${f ?? 'normal'}');
 
+		var font_size_point = FlxPoint.get(config.getInt('width'), config.getInt('height'));
 		super(x, y, text, FlxBitmapFont.fromMonospace('assets/fonts/${f ?? 'normal'}.png', LETTERS, font_size_point));
 
 		// letterSpacing = 0;
@@ -22,7 +24,7 @@ class Text extends FlxBitmapText
 
 		active = false;
 
-		BASE_SIZE = Std.int(font_size_point.x);
+		BASE_SIZE = config.getInt('default_size') ?? Std.int(font_size_point.x);
 		this.size = s ?? BASE_SIZE;
 		text = t;
 	}
