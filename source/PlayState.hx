@@ -54,10 +54,17 @@ class PlayState extends FlxState
 			}
 			else if (FlxG.random.bool(FlxG.random.float(0, 25)))
 			{
-				t.time += FlxG.random.float(-0.1, 10);
+				var inc:Float = FlxG.random.float(-0.1, 10);
+
+				if (t.time + inc > 10)
+					t.time = 10;
+				else
+					t.time += inc;
 			}
 			else
 			{
+				trace('New poive after ${t.time}');
+
 				var newPoive:Poive = new Poive();
 				newPoive.randomPosition(magon);
 				poives.add(newPoive);
