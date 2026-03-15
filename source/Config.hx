@@ -8,6 +8,9 @@ class Config
 	public var path:String = '';
 
 	public function new(config:String)
+		setConfig(config);
+
+	public function setConfig(config:String)
 	{
 		if (config != null)
 			this.path = 'assets/configs/$config.config';
@@ -58,4 +61,7 @@ class Config
 			return null;
 		}
 	}
+
+	public function getBool(field:String):Bool
+		return getString(field).toLowerCase() == 'true';
 }
