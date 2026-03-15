@@ -9,5 +9,7 @@ class Text extends FlxText
 		#if !web
 		font = 'assets/born2bsportyfs.otf';
 		#end
+
+		antialiasing = false;
 	}
 }

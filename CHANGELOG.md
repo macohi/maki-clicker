@@ -1,3 +1,4 @@
+- [DESKTOP] Fixed blurry text on desktop
 - [WEB] Texts now use the default flixel font on web, temp fix.
 - [WEB] The game has pixelated rendering on web now
 - Preparations for future clickables have been made:
