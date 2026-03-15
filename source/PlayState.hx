@@ -25,7 +25,7 @@ class PlayState extends FlxState
 		});
 
         add(scoreText);
-		add(new VersionText(0, 0, 24));
+		add(new VersionText());
 
 		score = Global.SCORE.value;
 	}
