@@ -2,11 +2,11 @@ import flixel.FlxG;
 import flixel.util.FlxSignal;
 import flixel.FlxSprite;
 
-class TheObject extends FlxSprite
+class Clickable extends FlxSprite
 {
-	override public function new()
+	override public function new(object:String)
 	{
-		super(0, 0, 'assets/object.png');
+		super(0, 0, 'assets/clickables/$object.png');
 
 		screenCenter();
 	}

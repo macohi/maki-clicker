@@ -3,7 +3,7 @@ import flixel.FlxState;
 
 class PlayState extends FlxState
 {
-	public var theObject:TheObject = new TheObject();
+	public var mainClickable:Clickable = new Clickable('main');
 
 	public var score:Int = 0;
 	public var scoreText:Text = new Text('');
@@ -12,16 +12,16 @@ class PlayState extends FlxState
 	{
 		super.create();
 
-		add(theObject);
+		add(mainClickable);
 
-		theObject.onLeftPressed.add(function()
+		mainClickable.onLeftPressed.add(function()
 		{
 			increment(1);
-			theObject.scale.set(0.8, 0.8);
+			mainClickable.scale.set(0.8, 0.8);
 		});
-		theObject.onLeftReleased.add(function()
+		mainClickable.onLeftReleased.add(function()
 		{
-			theObject.scale.set(1, 1);
+			mainClickable.scale.set(1, 1);
 		});
 
 		scoreText.fieldWidth = FlxG.width;

@@ -1,0 +1,3 @@
+- Preparations for future clickables have been made:
+    - `assets/object.png` moved to `assets/clickable/main.png`
+    - Clickable Objects now have a file location of `assets/clickables/`
