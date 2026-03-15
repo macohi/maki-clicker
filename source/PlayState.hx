@@ -1,3 +1,5 @@
+import flixel.math.FlxMath;
+import flixel.util.FlxColor;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxTimer;
@@ -80,9 +82,45 @@ class PlayState extends FlxState
 		score += amount;
 	}
 
+	public var pointAdditionText:Text;
+	public var pointQueue:Int = 0;
+
 	public function incrementPoints(amount:Int)
 	{
-		points += amount;
+		pointQueue += amount;
+
+		if (pointAdditionText == null)
+		{
+			pointAdditionText = new Text('', 0, 0);
+			add(pointAdditionText);
+			pointAdditionText.color = FlxColor.LIME;
+		}
+
+		FlxTween.cancelTweensOf(pointAdditionText);
+
+		pointAdditionText.alpha = 1;
+		pointAdditionText.y = FlxG.height - (pointAdditionText.height * 3);
+
+		function updatePAT(percent:Float = 1)
+		{
+			pointAdditionText.text = '+${Math.floor(FlxMath.lerp(pointQueue, 0, 1 - percent))} Points';
+			pointAdditionText.screenCenter(X);
+		}
+
+		updatePAT(1);
+		FlxTween.tween(pointAdditionText, {y: FlxG.height - (numbersText.height * 1.5), alpha: 0}, 0.5, {
+			ease: FlxEase.sineInOut,
+			startDelay: 1,
+			onComplete: function(t)
+			{
+				points += pointQueue;
+				pointQueue = 0;
+			},
+			onUpdate: function(t)
+			{
+				updatePAT(1 - t.percent);
+			}
+		});
 	}
 
 	override function update(elapsed:Float)
