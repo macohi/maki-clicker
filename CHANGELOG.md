@@ -1,3 +1,4 @@
+- The game is now 1280x720!
 - Added Poive
     Animated Clickable that spawns randomly
     and will reward you points depending on the color if you can click it before it fades away
