@@ -5,8 +5,6 @@ import flixel.text.FlxBitmapText;
 // base code yoinked from here: https://github.com/VirtuGuy/WTF-Engine/blob/main/source/funkin/graphics/FunkinText.hx
 class Text extends FlxBitmapText
 {
-	static final LETTERS:String = 'abcdefghijklmnopqrstuvwxyz1234567890.:';
-	
 	public var BASE_SIZE:Int = 8;
 	public var size(default, set):Int = 8;
 
@@ -17,7 +15,7 @@ class Text extends FlxBitmapText
 		this.config = new Config('fonts/${f ?? 'normal'}');
 
 		var font_size_point = FlxPoint.get(config.getInt('width'), config.getInt('height'));
-		super(x, y, text, FlxBitmapFont.fromMonospace('assets/fonts/${f ?? 'normal'}.png', LETTERS, font_size_point));
+		super(x, y, text, FlxBitmapFont.fromMonospace('assets/fonts/${f ?? 'normal'}.png', config.getString('letters'), font_size_point));
 
 		// letterSpacing = 0;
 		// lineSpacing = 1;
